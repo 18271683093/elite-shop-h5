@@ -1,0 +1,184 @@
+{
+  "id": "1867616",
+  "name": "elite-shop",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "603338",
+      "name": "地址",
+      "font_class": "dizhi",
+      "unicode": "e6ab",
+      "unicode_decimal": 59051
+    },
+    {
+      "icon_id": "4232441",
+      "name": "评论",
+      "font_class": "pinglun",
+      "unicode": "ea14",
+      "unicode_decimal": 59924
+    },
+    {
+      "icon_id": "640076",
+      "name": "信息",
+      "font_class": "xinxi",
+      "unicode": "e64b",
+      "unicode_decimal": 58955
+    },
+    {
+      "icon_id": "12866170",
+      "name": "返 回",
+      "font_class": "fanhui3",
+      "unicode": "e609",
+      "unicode_decimal": 58889
+    },
+    {
+      "icon_id": "2442396",
+      "name": "眼睛 闭眼 闭着眼睛",
+      "font_class": "biyan",
+      "unicode": "e601",
+      "unicode_decimal": 58881
+    },
+    {
+      "icon_id": "5466518",
+      "name": "睁眼",
+      "font_class": "zhengyan",
+      "unicode": "e617",
+      "unicode_decimal": 58903
+    },
+    {
+      "icon_id": "12761711",
+      "name": "收 起",
+      "font_class": "shouqi",
+      "unicode": "e622",
+      "unicode_decimal": 58914
+    },
+    {
+      "icon_id": "14124601",
+      "name": "收 起",
+      "font_class": "shouqi1",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "493250",
+      "name": "放大",
+      "font_class": "Enlarge",
+      "unicode": "e61c",
+      "unicode_decimal": 58908
+    },
+    {
+      "icon_id": "1115023",
+      "name": "播放",
+      "font_class": "bofang",
+      "unicode": "e60f",
+      "unicode_decimal": 58895
+    },
+    {
+      "icon_id": "11142579",
+      "name": "下一集",
+      "font_class": "xiayiji",
+      "unicode": "e644",
+      "unicode_decimal": 58948
+    },
+    {
+      "icon_id": "13116465",
+      "name": "汉光百货直播暂定icon",
+      "font_class": "hanguangbaihuozhibozandingicon",
+      "unicode": "e68e",
+      "unicode_decimal": 59022
+    },
+    {
+      "icon_id": "338385",
+      "name": "收藏",
+      "font_class": "shoucang",
+      "unicode": "e621",
+      "unicode_decimal": 58913
+    },
+    {
+      "icon_id": "8797968",
+      "name": "分享",
+      "font_class": "fenxiang",
+      "unicode": "e7cd",
+      "unicode_decimal": 59341
+    },
+    {
+      "icon_id": "1990040",
+      "name": "时钟",
+      "font_class": "clock",
+      "unicode": "e6be",
+      "unicode_decimal": 59070
+    },
+    {
+      "icon_id": "12889877",
+      "name": "个人中心",
+      "font_class": "gerenzhongxin",
+      "unicode": "e626",
+      "unicode_decimal": 58918
+    },
+    {
+      "icon_id": "7366637",
+      "name": "搜索",
+      "font_class": "sousuo",
+      "unicode": "e60e",
+      "unicode_decimal": 58894
+    },
+    {
+      "icon_id": "609279",
+      "name": "搜索",
+      "font_class": "sousuosearch82",
+      "unicode": "e6d1",
+      "unicode_decimal": 59089
+    },
+    {
+      "icon_id": "9557788",
+      "name": "对勾",
+      "font_class": "duigou",
+      "unicode": "e639",
+      "unicode_decimal": 58937
+    },
+    {
+      "icon_id": "6284056",
+      "name": "对勾 填充-01",
+      "font_class": "duigoutianchong-",
+      "unicode": "e634",
+      "unicode_decimal": 58932
+    },
+    {
+      "icon_id": "731126",
+      "name": "跳转",
+      "font_class": "guanbi1",
+      "unicode": "e606",
+      "unicode_decimal": 58886
+    },
+    {
+      "icon_id": "8432004",
+      "name": "增加",
+      "font_class": "zengjia",
+      "unicode": "e6d6",
+      "unicode_decimal": 59094
+    },
+    {
+      "icon_id": "14478390",
+      "name": "关  闭",
+      "font_class": "guanbi",
+      "unicode": "e61a",
+      "unicode_decimal": 58906
+    },
+    {
+      "icon_id": "6714144",
+      "name": "加号（展开）",
+      "font_class": "jiahaozhankai",
+      "unicode": "e62c",
+      "unicode_decimal": 58924
+    },
+    {
+      "icon_id": "6714145",
+      "name": "减号（收起）",
+      "font_class": "jianhaoshouqi",
+      "unicode": "e62d",
+      "unicode_decimal": 58925
+    }
+  ]
+}

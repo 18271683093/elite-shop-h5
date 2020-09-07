@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>消息</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="pragma" content="no-cach">
+    <meta name="robots" content="all">
+    <meta http-equiv="x-rim-auto-match" content="none">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <meta name="format-detection" content="address=no">
+    <meta name="format-detection" content="date=no">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="./css/reset.min.css">
+    <link rel="stylesheet" href="./css/message.css">
+</head>
+
+<body class="message-body">
+    <div class="message-show">
+        <!--
+             <div class="left">
+            <div class="time">5月1号</div>
+            <div class="message-item">
+                <img src="./images/m1.png" alt="">
+                <p>
+                    好吧，我们随时沟通。等待下周四的结果。祝你周末愉快！好吧，我们随时沟通。等待下周四的结果。祝你周末愉快！
+                </p>
+            </div>
+        </div>
+
+        <div class="right">
+            <div class="time">5月1号</div>
+            <div class="message-item">
+                <img src="./images/m1.png" alt="">
+                <p>
+                    好吧，我们随时沟通。
+                </p>
+            </div>
+        </div>
+     -->
+
+    </div>
+    <div class="message-input">
+        <input type="text" autocomplete="off" id="message-input">
+        <div id="message-send"></div>
+    </div>
+    <script src="./js/jquery.min.js"></script>
+    <!-- 模拟接口部分 后续上线替换真正的请求url之后可以删除 start-->
+    <script src="./js/mock-min.js"></script>
+    <script>
+        var flag = false,
+            isDate = false;
+        Mock.mock('/getlist', {
+            "success": 1,
+            "data|0-10": [{
+                "id|+1": 1,
+                "time": function () {
+                    var date = !isDate ? "5月1号" : "";
+                    isDate = true;
+                    return date
+                }, //随机生成日期时间
+                "headportrait": "./images/m1.png",
+                "identity|1": function () {
+                    flag = !flag;
+                    return flag ? "user" : "system"
+                },
+                "message|1-10": "测试消息"
+            }]
+        });
+        Mock.mock('/emitMessage', {
+            "success": 1,
+            "data": "发送成功！"
+        });
+    </script>
+    <!-- 模拟接口部分 后续上线替换真正的请求url之后可以删除 end-->
+
+    <script>
+        var curlogin = 'user'; // 该参数表达当前登录的是用户（user）还是客服（system） 只作为判断接口中对应的identity的数据显示在右边
+        var message = {
+            $el: $('.message-show'),
+            $input: $('#message-input'),
+            $send: $('#message-send'),
+            loadMessageUrl: "/getlist",
+            emitMessageUrl: "/emitMessage",
+            timer: null,
+            interval: 1000,
+            data: [],
+            newData: [],
+            template: function template(_ref) {
+                var _ref$time = _ref.time,
+                    time = _ref$time === void 0 ? "" : _ref$time,
+                    _ref$headportrait = _ref.headportrait,
+                    headportrait = _ref$headportrait === void 0 ? "./iamges/m1.png" : _ref$headportrait,
+                    _ref$message = _ref.message,
+                    message = _ref$message === void 0 ? "" : _ref$message,
+                    _ref$identity = _ref.identity,
+                    identity = _ref$identity === void 0 ? "user" : _ref$identity;
+                return "<div class=\"".concat(identity === curlogin ? 'right' : 'left',
+                        "\">\n                        ").concat(time ? '<div class="time">' + time + '</div>' :
+                        "",
+                        "\n                        <div class=\"message-item\">\n                            <img src=\""
+                        ).concat(headportrait,
+                        "\" alt=\"\">\n                            <p>\n                                ")
+                    .concat(message,
+                        "\n                            </p>\n                        </div>\n                    </div> "
+                        );
+            },
+            render: function render(data) {
+                var _this = this;
+
+                var html = "";
+                data.forEach(function (value) {
+                    html += _this.template(value);
+                });
+                this.$el.append(html);
+                this.$el.animate({
+                    scrollTop: this.$el.get(0).scrollHeight
+                }, 500);
+            },
+            AnalysisData: function AnalysisData(data) {
+                if (this.data.length === 0) {
+                    // 初始化
+                    this.data = data;
+                    this.newData = data;
+                } else {
+                    // 刷新
+                    var lastId = this.data[this.data.length - 1].id; //当前显示的最后一条消息
+
+                    var idx = 0;
+                    data.some(function (value, index) {
+                        if (value.id == lastId) {
+                            idx = index;
+                            return true;
+                        }
+
+                        return false;
+                    });
+                    this.data = data;
+                    this.newData = data.slice(idx+1);
+                }
+
+                this.render(this.newData);
+            },
+            loadData: function loadData() {
+                $.ajax({
+                    url: this.loadMessageUrl,
+                    type: "get",
+                    dataType: 'json',
+                    success: function (res) {
+                        console.log(res.data);
+
+                        if (res.success) {
+                            this.AnalysisData(res.data);
+                        } else {
+                            this.warn(res);
+                        }
+                    }.bind(this),
+                    error: function (res) {
+                        this.warn(res);
+                    }.bind(this)
+                });
+            },
+            emitMessage: function emitMessage(data) {
+                $.ajax({
+                    url: this.emitMessageUrl,
+                    type: "get",
+                    dataType: 'json',
+                    data: data,
+                    success: function (res) {
+                        if (res.success) {
+                            this.$input.val("");
+                            this.loadData();
+                        } else {
+                            this.warn(res);
+                        }
+                    }.bind(this),
+                    error: function (res) {
+                        this.warn(res);
+                    }.bind(this)
+                });
+            },
+            bindEvent: function bindEvent() {
+                var _this2 = this;
+
+                this.$send.click(function () {
+                    var message = _this2.$input.val();
+
+                    if (message) {
+                        _this2.emitMessage({
+                            // 这里增加其他保存参数
+                            message: message
+                        });
+                    }
+                });
+                this.timer = setInterval(function () {
+                    _this2.loadData();
+                }, this.interval);
+            },
+            init: function init() {
+                this.bindEvent();
+                this.loadData();
+            }
+        };
+
+        
+        message.init()
+    </script>
+</body>
+
+</html>

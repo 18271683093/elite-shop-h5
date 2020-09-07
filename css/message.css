@@ -1,0 +1,128 @@
+html,
+body {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  font-size: calc(16*100vw/375);
+}
+.message-body {
+  box-sizing: border-box;
+  padding-bottom: 5.1875rem;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  position: relative;
+}
+.message-body > .message-input {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 5.1875rem;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.5rem 1rem 2.5625rem;
+  background: #fff;
+  display: flex;
+  align-items: center;
+}
+.message-body > .message-input > input {
+  flex: 1;
+  height: 2.125rem;
+  background: #f3f4f6;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+  padding: 0 0.3125rem;
+  font-size: 0.875rem;
+  font-family: Helvetica;
+  color: #0d0e15;
+  line-height: 2.125rem;
+}
+.message-body > .message-input > div {
+  background: url(../images/message.png) no-repeat;
+  background-size: 100% 100%;
+  background-position: center center;
+  width: 2.125rem;
+  flex: 0 0 2.125rem;
+  height: 2.125rem;
+  margin-left: 0.625rem;
+}
+.message-body > .message-show {
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 1rem 0.3125rem;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.message-body > .message-show > div {
+  margin: 2.1875rem 0;
+}
+.message-body > .message-show > div > .time {
+  height: 1.1875rem;
+  font-size: 0.75rem;
+  font-family: PingFangSC-Medium, PingFang SC;
+  font-weight: 500;
+  color: #768196;
+  line-height: 1.1875rem;
+  text-align: center;
+  margin: 1.5625rem;
+}
+.message-body > .message-show > div > .message-item > img {
+  flex: 0 0 2.5rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+}
+.message-body > .message-show > div > .message-item > p {
+  text-align: justify;
+  padding: 0.8125rem 1.0625rem;
+  box-sizing: border-box;
+  font-size: 0.875rem;
+  font-family: Helvetica;
+  line-height: 1.25rem;
+  border-radius: 0.625rem;
+  position: relative;
+}
+.message-body > .message-show > div.left > .message-item {
+  display: flex;
+}
+.message-body > .message-show > div.left > .message-item > img {
+  margin-right: 1.25rem;
+}
+.message-body > .message-show > div.left > .message-item > p {
+  background: #ff4400;
+  color: #ffffff;
+}
+.message-body > .message-show > div.left > .message-item > p::before {
+  content: "";
+  display: block;
+  border-top: 0.625rem solid transparent;
+  border-bottom: 0.625rem solid transparent;
+  border-right: 0.9375rem solid #ff4400;
+  border-left: 0.9375rem solid transparent;
+  position: absolute;
+  left: -1.5625rem;
+  top: 0.625rem;
+}
+.message-body > .message-show > div.right > .message-item {
+  display: flex;
+  flex-direction: row-reverse;
+}
+.message-body > .message-show > div.right > .message-item > img {
+  margin-left: 1.25rem;
+}
+.message-body > .message-show > div.right > .message-item > p {
+  background: #e0e2e7;
+  color: #0D0E15;
+}
+.message-body > .message-show > div.right > .message-item > p::before {
+  content: "";
+  display: block;
+  border-top: 0.625rem solid transparent;
+  border-bottom: 0.625rem solid transparent;
+  border-left: 0.9375rem solid #e0e2e7;
+  border-right: 0.9375rem solid transparent;
+  position: absolute;
+  right: -1.5625rem;
+  top: 0.625rem;
+}

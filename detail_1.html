@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- 制作人信息 -->
+    <!--PM:[xxx] Designer:[xxx] Developer:[] date:2018xxxx-->
+    <title>详情</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="pragma" content="no-cach">
+    <meta name="robots" content="all">
+    <meta http-equiv="x-rim-auto-match" content="none">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <meta name="format-detection" content="address=no">
+    <meta name="format-detection" content="date=no">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="./css/reset.min.css">
+    <link rel="stylesheet" href="./css/common.css">
+</head>
+
+<body>
+    <div id="container" class="detail">
+        <div class="banner  bg-white mb10">
+            <img src="./images/index1-banner.jpg" alt="" srcset="">
+            <div class="num">
+                <div class="count"><span>￥9.9</span><span>￥99</span></div>
+                <div class="month-sale">月销230笔</div>
+            </div>
+           
+            <div class="name-with-share ">
+                <p class="name">新高中高是新高中高是新高中高是新高中高是新高中高是新高中高是新高中高是新高中高是新高中高是新高中高是</p>
+                <div class="share">
+                    <img src="./images/a4.png" alt="">
+                    <span>分享</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-control bg-white mb10 detailPD">
+            <div class="label">级别选择</div>
+            <div class="value">L1-L3 L4-L5</div>
+        </div>
+
+        <div class="bg-white mb10 detailPD  pj-block">
+            <div class="pj"><span>商品评价（10）</span><a href="javascript:viod(0)">查看全部</a></div>
+            <div class="pj-item">
+                <img src="./images/default.png" alt="">
+                <span class="pj-name">小****才</span>
+                <span class="pj-msg">感谢老师很详细的讲解</span>
+            </div>
+
+            <div class="pj-item">
+                <img src="./images/default.png" alt="">
+                <span class="pj-name">小****才</span>
+                <span class="pj-msg">感谢老师很详细的讲解</span>
+            </div>
+        </div>
+
+        <div class="good-detail bg-white mb10 detailPD">
+           <h4>商品详情</h4>
+           <ul class="good-detai-list">
+            <li>
+                 <img src="./images/detail.jpg" alt="">
+            </li>
+           </ul>
+
+        </div>
+    </div>
+    <div id="menu">
+        <a href="./index.html" > 
+            <div class="icon icon-all-goods"></div>
+            <p>首页</p>
+        </a>
+        <a href="#"> 
+            <div class="icon icon-kefu-goods"></div>
+            <p>客服</p>
+        </a>
+        <a href="#" class="on"> 
+            <div class="icon icon-collect-goods"></div>
+            <p>收藏</p>
+        </a>
+        <a class="btn" id="btn-buy-hook">立即购买</a>
+    </div>
+
+
+    <div class="shade" id="shade-hook"></div>
+    <div class="buy-card" id="buy-card-hook">
+        <div class="good-msg">
+            <img src="./images/good.jpg" alt="">
+            <div>
+                <p class="name">介绍啊介绍啊介绍啊介绍啊介绍啊介绍啊介绍啊介绍啊介绍啊介绍啊介绍啊介绍啊介绍啊介绍啊介绍啊介绍啊介绍啊介绍啊介绍啊</p>
+                <p class="old-count">￥2,000</p>
+                <div class="new-count"><span>￥1,000</span><span class="tip">三人拼团价</span></div>
+            </div>
+        </div>
+
+        <form action="./payafter.html">
+            <div class="form-control">
+                    <div class="label">购买数量</div>
+                    <div class="value">
+                        <div class="num-control">
+                            <span id="num-control-sub-hook" class=" iconfont iconjianhaoshouqi"></span>
+                            <input id="num-control-input-hook" type="number" name="num" value="1">
+                            <span id="num-control-add-hook" class=" iconfont iconjiahaozhankai "></span>
+                        </div>
+                    </div>
+                
+            </div>
+
+            <div class="form-control">
+              
+                    <div class="label">选择级别</div>
+                    <div class="value">
+                        <div class="checkbox-control">
+                              <label>
+                                <input type="checkbox" name="level"  value="L1-L3">
+                                <span>L1-L3</span>
+                              </label>
+                              <label>
+                                <input type="checkbox" name="level"  value="L4-L6">
+                                <span >L4-L6</span>
+                            </label>
+                         </div>
+                    </div>
+               
+            </div>
+
+            <div class="form-control">
+                <div class="label">请输入手机号</div>
+                <div class="value">
+                   <input type="text" name="phone" id=""  placeholder="请输入您的手机号码" maxlength="11" onkeyup="this.value=this.value.replace(/\D/g,'')" >
+                </div>
+           
+        </div>
+
+            <button type="submit" class="submit">下一步</button>
+        </form>
+
+        <div class="close iconfont iconguanbi" id="close-buy-card-hook"></div>
+    </div>
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/main.js"></script>
+    <script>
+        //  min min最小值 max最大值 超出的区间 设置的value会变成边界值
+        new NumControl("#num-control-input-hook",'#num-control-add-hook','#num-control-sub-hook',{min:2,max:100});
+    </script>
+</body>
+
+</html>

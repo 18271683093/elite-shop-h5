@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- 制作人信息 -->
+    <!--PM:[xxx] Designer:[xxx] Developer:[] date:2018xxxx-->
+    <title>订单详情</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="pragma" content="no-cach">
+    <meta name="robots" content="all">
+    <meta http-equiv="x-rim-auto-match" content="none">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <meta name="format-detection" content="address=no">
+    <meta name="format-detection" content="date=no">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="./css/reset.min.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/bargain.css">
+</head>
+
+<body class="payafter-body">
+    <!-- - -->
+    <div id="container" class="order payafter">
+
+        <div class="tips">
+            <div class="orange-bg"> </div>
+            <span class="iconfont iconduigou"></span>
+            <span class="text">购买成功</span>
+        </div>
+        <div class="bg-white  order-block border">
+            <div class="good-msg ">
+                <img src="./images/good.jpg" alt="">
+                <div>
+                    <p class="name">介绍啊介绍啊介绍啊介绍啊介绍啊介绍啊介绍啊介绍啊介绍啊介绍啊介绍啊介绍啊介绍啊介绍啊介绍啊介绍啊介绍啊介绍啊介绍啊</p>
+                    <p class="tip"></p>
+                    <div class="new-count"><span>￥1,000</span><a href="#">查看课程</a></div>
+                </div>
+            </div>
+
+            <div class="pay-msg">
+                <p>实付金额：￥1,000</p>
+                <p>订单编号：101011010101</p>
+                <p>付款时间：2020-05-01 00：26：37</p>
+            </div>
+
+        </div>
+        <div class="  tip-block ">
+            接下来您还可以：
+        </div>
+
+        <div class="bg-white teacher-msg">
+            <h3><span>添加助教老师</span></h3>
+            <div class="wx-text"> <span><img src="./images/wx.png" alt="">微信号码</span><input type="text" readonly
+                    value="asasasa" id="wx-input">
+                <div onclick="copyContent('wx-input')">复制</div>
+            </div>
+            <img src="./images/j3.png" alt="">
+            <h3><span>分享好友</span></h3>
+            <a class="btn" id="btn-share-hook" href="javascript:void(0);">
+                一键分享
+            </a>
+        </div>
+
+    </div>
+
+
+    <div class="copy-success" id="copy-success">
+        <div>
+            <p>您已复制成功，去微信粘贴。</p>
+            <div id="copy-close"><img src="./images/wx.png" alt="" srcset=""> 确定</div>
+        </div>
+    </div>
+
+
+    <div class="shade" id="shade-hook">
+        <img class="sanjiao" src="./images/s1.png" alt="">
+        <img class="book" src="./images/book.png" alt="">
+        <img class="plane" src="./images/plane.png" alt="">
+        <a href="#" class="btn" id="close-buy-card-hook">我知道啦</a>
+    </div>
+
+
+    <script src="./js/jquery.min.js"></script>
+    <script>
+        function copyContent(id) {
+            var ElementObj = document.getElementById(id);
+            ElementObj.select();
+            document.execCommand("Copy");
+            $('#copy-success').show()
+        }
+
+        $('#copy-close').click(function(){
+            $('#copy-success').hide()
+        })
+
+        $('#btn-share-hook').click(function(){
+            $('#shade-hook').show();
+        })
+
+        $("#close-buy-card-hook").click(function(){
+            $('#shade-hook').hide();
+        })
+    </script>
+
+
+
+
+</body>
+
+</html>

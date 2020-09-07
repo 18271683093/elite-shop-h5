@@ -1,0 +1,153 @@
+html,
+body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    font-size: calc(~'16*100vw/375');
+}
+
+.message-body {
+    box-sizing: border-box;
+    padding-bottom: 5.1875rem;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    position: relative;
+
+    >.message-input {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 5.1875rem;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0.5rem 1rem 2.5625rem;
+        background: #fff;
+        display: flex;
+        align-items: center;
+
+        >input {
+            flex: 1;
+            height: 2.125rem;
+            background: rgba(243, 244, 246, 1);
+            border: none;
+            outline: none;
+            box-sizing: border-box;
+            padding: 0 0.3125rem;
+            font-size: 0.875rem;
+            font-family: Helvetica;
+            color: rgba(13, 14, 21, 1);
+            line-height: 2.125rem;
+        }
+
+        >div {
+            background: url(../images/message.png) no-repeat;
+            background-size: 100% 100%;
+            background-position: center center;
+            width: 2.125rem;
+            flex: 0 0 2.125rem;
+            height: 2.125rem;
+            margin-left: 0.625rem;
+        }
+    }
+
+    >.message-show {
+        height: 100%;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0 1rem 0.3125rem;
+        overflow-x: hidden;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        >div {
+            margin: 2.1875rem 0;
+
+            >.time {
+                height: 1.1875rem;
+                font-size: 0.75rem;
+                font-family: PingFangSC-Medium, PingFang SC;
+                font-weight: 500;
+                color: rgba(118, 129, 150, 1);
+                line-height: 1.1875rem;
+                text-align: center;
+                margin: 1.5625rem;
+            }
+
+            >.message-item>img {
+                flex: 0 0 2.5rem;
+                width: 2.5rem;
+                height: 2.5rem;
+                border-radius: 50%;
+            }
+
+            >.message-item>p {
+                text-align: justify;
+                padding: 0.8125rem 1.0625rem;
+                box-sizing: border-box;
+                font-size: 0.875rem;
+                font-family: Helvetica;
+                line-height: 1.25rem;
+                border-radius: 0.625rem;
+                position: relative;
+            }
+
+            &.left {
+                >.message-item {
+
+                    display: flex;
+
+                    >img {
+                        margin-right: 1.25rem;
+                    }
+
+                    >p {
+                        background: rgba(255, 68, 0, 1);
+                        color: rgba(255, 255, 255, 1);
+
+                        &::before {
+                            content: "";
+                            display: block;
+                            border-top: 0.625rem solid transparent;
+                            border-bottom: 0.625rem solid transparent;
+                            border-right: 0.9375rem solid rgba(255, 68, 0, 1);
+                            border-left: 0.9375rem solid transparent;
+                            position: absolute;
+                            left: -1.5625rem;
+                            top: 0.625rem;
+                        }
+
+                    }
+
+                }
+
+            }
+
+            &.right {
+                >.message-item {
+                    display: flex;
+                    flex-direction: row-reverse;
+
+                    >img {
+                        margin-left: 1.25rem;
+                    }
+
+                    >p {
+                        background: rgba(224, 226, 231, 1);
+                        color: #0D0E15;
+
+                        &::before {
+                            content: "";
+                            display: block;
+                            border-top: 0.625rem solid transparent;
+                            border-bottom: 0.625rem solid transparent;
+                            border-left: 0.9375rem solid rgba(224, 226, 231, 1);
+                            border-right: 0.9375rem solid transparent;
+                            position: absolute;
+                            right: -1.5625rem;
+                            top: 0.625rem;
+                        }
+
+                    }
+                }
+            }
+        }
+    }
+}

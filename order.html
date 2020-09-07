@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- 制作人信息 -->
+    <!--PM:[xxx] Designer:[xxx] Developer:[] date:2018xxxx-->
+    <title>订单</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="pragma" content="no-cach">
+    <meta name="robots" content="all">
+    <meta http-equiv="x-rim-auto-match" content="none">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <meta name="format-detection" content="address=no">
+    <meta name="format-detection" content="date=no">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="./css/reset.min.css">
+    <link rel="stylesheet" href="./css/common.css">
+</head>
+
+<body>
+    <div id="container" class="order">
+       <div class="bg-white mb10 top-box">
+           <div>选择商品<br>开团/参团</div>
+           <div></div>
+           <div>邀请好友<br>参团支付</div>
+           <div></div>
+           <div>人满参团<br>失败退款</div>
+       </div>
+
+       <div class="user-adress">
+           <div class="iconfont icondizhi"></div>
+           <div class="adress-place">
+               <div><span>李丽</span><span>13800180000</span><a href="pjavacrippt:void(0)">修改</a></div>
+               <p>北京市朝阳区呼家楼11-1北京市朝阳区呼家楼11-1北京市朝阳区呼家楼11-1</p>
+           </div>
+       </div>
+
+       <div class="bg-white mb10 order-block ">
+            <div class="good-msg mb10">
+                <img src="./images/good.jpg" alt="">
+                <div>
+                    <p class="name">介绍啊介绍啊介绍啊介绍啊介绍啊介绍啊介绍啊介绍啊介绍啊介绍啊介绍啊介绍啊介绍啊介绍啊介绍啊介绍啊介绍啊介绍啊介绍啊</p>
+                    <p class="tip">拼团</p>
+                    <div class="new-count"><span>￥1,000</span><span class="old-count">￥2,000</span><span>x1</span></div>
+                    <p class="phone">手机号：11111111111111</p>
+                </div>
+            </div>
+            <div class="good-msg">
+                <img src="./images/good.jpg" alt="">
+                <div>
+                    <p class="name">介绍啊介绍啊介绍啊介绍啊介绍啊介绍啊介绍啊介绍啊介绍啊介绍啊介绍啊介绍啊介绍啊介绍啊介绍啊介绍啊介绍啊介绍啊介绍啊</p>
+                    <p class="tip">拼团</p>
+                    <div class="new-count"><span>￥1,000</span><span class="old-count">￥2,000</span><span>x1</span></div>
+                    <p class="phone">手机号：11111111111111</p>
+                </div>
+            </div>
+
+            <div class="total">
+                <span>共2件 商品小计：</span>
+                <span>￥2,000</span>
+            </div>
+        </div>
+
+        <form  action="./spell_details.html" id="myform" class="bg-white mb10 order-block  form-control">
+            <div class="label">买家留言</div>
+            <div class="value"><textarea name="" id="" placeholder="请输入留言"></textarea></div>
+        </form>
+    </div>
+    <div id="menu" class="order-menu">
+        <div >
+            <span>应付</span>
+            <span>￥1,100</span>
+        </div>
+        <a class="btn" id="submit" href="javascript:void(0);">
+            提交订单
+        </a>
+    </div>
+
+    <script>
+        document.getElementById('submit').onclick=function(){
+            document.getElementById('myform').submit();
+        }
+    </script>
+
+ 
+  
+</body>
+
+</html>

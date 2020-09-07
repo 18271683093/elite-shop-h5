@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- 制作人信息 -->
+    <!--PM:[xxx] Designer:[xxx] Developer:[] date:2018xxxx-->
+    <title>拼团详情</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="pragma" content="no-cach">
+    <meta name="robots" content="all">
+    <meta http-equiv="x-rim-auto-match" content="none">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <meta name="format-detection" content="address=no">
+    <meta name="format-detection" content="date=no">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="./css/reset.min.css">
+    <link rel="stylesheet" href="./css/common.css">
+</head>
+
+<body class="spell_details">
+    <div id="container" class="order ">
+       <div class="orange-bg"></div>
+       <div class="bg-white  order-block border">
+            <div class="good-msg ">
+                <img src="./images/good.jpg" alt="">
+                <div>
+                    <p class="name">介绍啊介绍啊介绍啊介绍啊介绍啊介绍啊介绍啊介绍啊介绍啊介绍啊介绍啊介绍啊介绍啊介绍啊介绍啊介绍啊介绍啊介绍啊介绍啊</p>
+                    <p class="tip">拼团</p>
+                    <div class="new-count"><span>￥1,000</span><span class="old-count">￥2,000</span></div>
+                </div>
+            </div>
+           
+        </div>
+        <div class="bg-white  tip-block ">
+            <div class="tips">
+            拼团规则：邀请三人参团，人数不足自动退款
+        </div>
+        </div>
+        
+        <div class="jg"></div>
+        <div class="bg-white mb10 order-block ">
+            <div class="count-down-control mb10">
+                <div class="label">剩余时间</div>
+                <div class="value" id="count-down-hook">
+                </div>
+                <div class="label">结束</div>
+           </div>
+
+           <div class="spell_person">
+               <div>
+                    <img src="./images/index1-banner.jpg" alt="" >
+                    <span>烨烨酱</span>
+               </div>
+               <div>
+                    <img src="./images/good.jpg" alt="" >
+                    <span>烨烨酱</span>
+               </div>
+
+               <div>
+                    <img src="./images/ad.png" alt="" >
+               </div>
+                
+           </div>
+                
+        </div>
+       
+    </div>
+    <div id="menu" class="spell-details-menu">
+        <p>还差 1 人，即可拼团成功！</p>
+        <a class="btn" id="btn-share-hook" href="javascript:void(0);">
+            邀请好友参团
+        </a>
+    </div>
+
+    <div class="shade" id="share-shade-hook"></div>
+    <div class="share-card" id="share-card-hook">
+        <img class="tx" src="./images/good.jpg" alt="">
+        <p class="name">sasaasaas</p>
+        <p class="title">为您挑选了一个好物</p>
+        <img class="good" src="./images/good.jpg" alt="" srcset="">
+        <div class="msg">
+            <div >
+                <p>￥1,000</p>
+                <p>精锐海外升学 学习理学院美国教学禁赛一对一线上直播课</p>
+            </div>
+            <img src="./images/index1-banner.jpg" alt="">
+        </div>
+        <p class="tip">长按图片保存至相册</p>
+        <div class="close" id="close-share-card-hook"></div>
+    </div>
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/main.js"></script>
+    <script >
+        // timeStamp  传入毫秒  cb结束后的回调
+        new CountDownHook("#count-down-hook",{timeStamp:1000000000,cb:function(){ console.log('倒计时end')}});
+        // $(function(){
+        //     $("#btn-buy-hook").trigger('click')
+        // })  
+
+        $('#btn-share-hook').click(function(){
+            $('#share-shade-hook').show();
+            $('#share-card-hook').show();
+        })
+
+        $('#close-share-card-hook,#share-shade-hook').click(function(){
+            $('#share-shade-hook').hide();
+            $('#share-card-hook').hide();
+        })
+   </script>
+  
+
+ 
+  
+</body>
+
+</html>

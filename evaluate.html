@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- 制作人信息 -->
+    <!--PM:[xxx] Designer:[xxx] Developer:[] date:2018xxxx-->
+    <title>评价中心</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="pragma" content="no-cach">
+    <meta name="robots" content="all">
+    <meta http-equiv="x-rim-auto-match" content="none">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <meta name="format-detection" content="address=no">
+    <meta name="format-detection" content="date=no">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="./css/reset.min.css">
+    <link rel="stylesheet" href="./css/common.css">
+</head>
+
+<body class="evaluate">
+    <div id="container" >
+        <div class="tabs">
+            <div class="active">待评价</div>
+            <div class="">已评价</div>
+        </div>
+
+        <div class="tab-content active ">
+            <div class="empty">暂无评价</div>
+            <div class="evaluate-item">
+                <p class="date">2020-05-01 00:26:37</p>
+                <div>
+                    <img src="./images/good.jpg" alt="" srcset="">
+                    <div>
+                        <p>精锐海外升学·学习力学院美国数学竞赛1对1线上直播课精锐海外升学·学习力学院美国数学竞赛1对1线上直播课精锐海外升学·学习力学院美国数学竞赛1对1线上直播课</p>
+                        <div><a href="./evaluateform.html">去评价</a></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="evaluate-item">
+                <p class="date">2020-05-01 00:26:37</p>
+                <div>
+                    <img src="./images/good.jpg" alt="" srcset="">
+                    <div>
+                        <p>精锐海外升学·学习力学院美国数学竞赛1对1线上直播课精锐海外升学·学习力学院美国数学竞赛1对1线上直播课精锐海外升学·学习力学院美国数学竞赛1对1线上直播课</p>
+                        <div><a href="javascript:void(0)">去评价</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tab-content ">
+            <div class="evaluate-item">
+                <p class="date">2020-05-01 00:26:37</p>
+                <div>
+                    <img src="./images/good.jpg" alt="" srcset="">
+                    <div>精锐海外升学·学习力学院美国数学竞赛1对1线上直播课</div>
+                </div>
+                <textarea disabled >您的评价：占位占位占位占位占位占位占位占位占位占位 占位占位占位</textarea>
+            </div>
+
+            <div class="evaluate-item">
+                <p class="date">2020-05-01 00:26:37</p>
+                <div>
+                    <img src="./images/good.jpg" alt="" srcset="">
+                    <div>精锐海外升学·学习力学院美国数学竞赛1对1线上直播课</div>
+                </div>
+                <textarea disabled  rows="2">您的评价：占位占位占位占位占位占位占位占位占位占位 占位占位占位</textarea>
+            </div>
+        </div>
+    </div>
+    <script src="./js/jquery.min.js"></script>
+    <script>
+        $('.tabs > div').click(function(){
+            $('.tabs > div').removeClass('active')
+            $(this).addClass('active')
+            $('.tab-content').removeClass('active').eq($(this).index()).addClass('active')
+        })
+    </script>
+</body>
+
+</html>

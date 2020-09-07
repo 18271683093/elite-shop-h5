@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表单</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="pragma" content="no-cach">
+    <meta name="robots" content="all">
+    <meta http-equiv="x-rim-auto-match" content="none">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <meta name="format-detection" content="address=no">
+    <meta name="format-detection" content="date=no">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1">
+    <link rel="stylesheet" href="./css/reset.min.css">
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body >
+    <form action="#" class="common-form vueBox">
+        <div class="form-control-group">
+            <div class="form-control">
+                <div class="label">收件人</div>
+                <div class="value">
+                    <input type="text" placeholder="请输入" value="李丽">
+                </div>
+            </div>
+            <div class="form-control">
+                <div class="label">联系电话</div>
+                <div class="value">
+                    <input type="text" placeholder="手机或固话">
+                </div>
+            </div>
+            <div class="form-control">
+                <div class="label">所在地区</div>
+                <div class="value">
+                    <input type="text" readonly id="area" placeholder="地区信息">
+                    <img class="iconimg" id="areaicon" src="./images/left-icon.png" alt="" srcset="">
+                </div>
+            </div>
+            <div class="form-control">
+                <div class="label">详细地址</div>
+                <div class="value">
+                    <input type="text" placeholder="街道门牌信息">
+                </div>
+            </div>
+    
+            <div class="form-control">
+                <div class="label">邮政编码</div>
+                <div class="value">
+                    <input type="text" placeholder="邮政编码">
+                </div>
+            </div>
+        </div>
+
+        <button type="submit" class="btn-submit"> 保存</button>
+    </form>
+   
+    <script src="./js/jquery.min.js"></script> 
+    <script src="./js/jquery.pickArea.js"></script>
+    <script src="./js/citys.js"></script>
+    <script>
+         $("#area").pickArea({
+            'speed':2
+         });
+         $("#areaicon").click(function(){
+            $("#area").trigger('click')
+         })
+    </script>
+</body>
+</html>

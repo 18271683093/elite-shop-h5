@@ -1,0 +1,20 @@
+{
+    "success":1,
+    "data":[
+        {
+            "id":"1",
+            "identity":"user",
+            "message":"你好，这个怎么充值？",
+            "headportrait":"./iamges/m1.png",
+            "time":"5月1日"
+        },
+        {
+            "id":"2",
+            "identity":"system",
+            "message":"请点开个人中心，点击充值按钮就好了",
+            "headportrait":"./iamges/m2.png",
+            "time":""
+        }
+      
+    ]
+}

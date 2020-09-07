@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- 制作人信息 -->
+    <!--PM:[xxx] Designer:[xxx] Developer:[] date:2018xxxx-->
+    <title>首页</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="pragma" content="no-cach">
+    <meta name="robots" content="all">
+    <meta http-equiv="x-rim-auto-match" content="none">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <meta name="format-detection" content="address=no">
+    <meta name="format-detection" content="date=no">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="./css/reset.min.css">
+    <link rel="stylesheet" href="./css/common.css">
+</head>
+
+<body>
+    <div id="container" class="index">
+        <div class="banner pd10 border-box bg-white mb10">
+            <img src="./images/index1-banner.jpg" alt="" srcset="">
+            <div class="input-group">
+                <label for="search"><img src="./images/se.png" alt="" srcset=""></label>
+                <input name="keyword" type="text" id="search" placeholder="搜索课程" onkeyup="seach(this,'./index.html')"  >
+            </div>
+            <a href="#" class="yaoqing"  style=" background-image:url(./images/a3.png)"></a>
+        </div>
+
+        <div class="good-list pd10 border-box bg-white mb10">
+            <div class="good-head mb10">
+                <img src="./images/a.png" alt="">
+                <h3>精品课程</h3>
+                <a href="#">更多</a>
+            </div>
+            <div class="good-body">
+                <div>
+                    <img src="./images/good.jpg" alt="">
+                    <p class="name">升学评测必修课 新高中高是新高中高是新高中高是新高中高是新高中高是</p>
+                    <div class="count"><span>￥9.9</span><span>￥99</span></div>
+                    <div class="btns">
+                        <span>月销230笔</span>
+                        <a href="./detail_1.html">去拼团</a>
+                    </div>
+                </div>
+                <div>
+                    <img src="./images/good.jpg" alt="">
+                    <p class="name">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
+                    <div class="count"><span>￥9.9</span><span>￥99</span></div>
+                    <div class="btns">
+                        <span>月销230笔</span>
+                        <a href="./detail_2.html">去拼团</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="good-list pd10 border-box bg-white mb10">
+            <div class="good-head mb10">
+                <img class="zs" src="./images/zs.png" alt="">
+                <h3>精品课程</h3>
+                <a href="#">更多</a>
+            </div>
+            <div class="good-body">
+                <div>
+                    <img src="./images/good.jpg" alt="">
+                    <p class="name">升学评测必修课 新高中高是新高中高是新高中高是新高中高是新高中高是</p>
+                    <div class="count"><span>￥9.9</span><span>￥99</span></div>
+                    <div class="btns">
+                        <span>月销230笔</span>
+                        <a href="./detail_3.html">去拼团</a>
+                    </div>
+                </div>
+                <div>
+                    <img src="./images/good.jpg" alt="">
+                    <p class="name">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
+                    <div class="count"><span>￥9.9</span><span>￥99</span></div>
+                    <div class="btns">
+                        <span>月销230笔</span>
+                        <a href="./detail_4.html">去拼团</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="menu">
+        <a href="./index.html" class="on"> 
+            <div class="icon icon-all-goods"></div>
+            <p>全部商品</p>
+        </a>
+        <a href="./message.html" class="on"> 
+            <div class="icon icon-message-goods"></div>
+            <p>消息</p>
+        </a>
+        <a href="./order.html" class="on"> 
+            <div class="icon icon-car-goods"></div>
+            <p>购物车</p>
+        </a>
+        <a href="./personal_center.html" class="on"> 
+            <div class="icon icon-my-goods"></div>
+            <p>我的</p>
+        </a>
+    </div>
+
+    <script>
+
+        function seach(input,src){
+            var e=window.event || arguments.callee.caller.arguments[0];
+            // keycode 13 = Enter
+            if(e.keyCode === 13){
+                location.href = src +"?"+input.name+"="+input.value
+            }
+            
+        }   
+    </script>
+</body>
+
+</html>
