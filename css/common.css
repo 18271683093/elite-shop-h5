@@ -890,6 +890,7 @@ body .order > .order-block > .spell_person > div > span {
 }
 body .order.payafter {
   background-color: #edf2f5 !important;
+  background-image: none !important;
   padding-top: 0 !important;
 }
 body .order.payafter > .tips {
