@@ -15,7 +15,8 @@
     <meta name="format-detection" content="email=no">
     <meta name="format-detection" content="address=no">
     <meta name="format-detection" content="date=no">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <link rel="stylesheet" href="./css/reset.min.css">
     <link rel="stylesheet" href="./css/swiper.min.css">
     <link rel="stylesheet" href="./css/common.css">
@@ -36,7 +37,7 @@
                 <div class="count"><span>￥9.9</span><span>￥99</span></div>
                 <div class="month-sale">月销230笔</div>
             </div>
-           
+
             <div class="name-with-share ">
                 <p class="name">新高中高是新高中高是新高中高是新高中高是新高中高是新高中高是新高中高是新高中高是新高中高是新高中高是</p>
                 <div class="share">
@@ -49,24 +50,24 @@
         <div class="form-control bg-white mb10 detailPD">
             <div class="label">级别选择</div>
             <div class="value">
-                <div class="checkbox-control contact" >
+                <div class="checkbox-control contact">
                     <label>
-                      <input type="checkbox" name="level"  value="L1-L3">
-                      <span>L1-L3</span>
+                        <input type="checkbox" name="level" value="L1-L3">
+                        <span>L1-L3</span>
                     </label>
                     <label>
-                      <input type="checkbox" name="level"  value="L4-L6">
-                      <span >L4-L6</span>
-                  </label>
-                  <label>
-                    <input type="checkbox" name="level"  value="L7-L8">
-                    <span>L7-L8</span>
-                  </label>
-                  <label>
-                    <input type="checkbox" name="level"  value="L8-L9">
-                    <span >L8-L9</span>
-                </label>
-               </div>
+                        <input type="checkbox" name="level" value="L4-L6">
+                        <span>L4-L6</span>
+                    </label>
+                    <label>
+                        <input type="checkbox" name="level" value="L7-L8">
+                        <span>L7-L8</span>
+                    </label>
+                    <label>
+                        <input type="checkbox" name="level" value="L8-L9">
+                        <span>L8-L9</span>
+                    </label>
+                </div>
             </div>
         </div>
 
@@ -86,25 +87,25 @@
         </div>
 
         <div class="good-detail bg-white mb10 detailPD">
-           <h4>商品详情</h4>
-           <ul class="good-detai-list">
-            <li>
-                 <img src="./images/detail.jpg" alt="">
-            </li>
-           </ul>
+            <h4>商品详情</h4>
+            <ul class="good-detai-list">
+                <li>
+                    <img src="./images/detail.jpg" alt="">
+                </li>
+            </ul>
 
         </div>
     </div>
     <div id="menu">
-        <a href="./index.html" > 
+        <a href="./index.html">
             <div class="icon icon-all-goods"></div>
             <p>首页</p>
         </a>
-        <a href="#"> 
+        <a href="#">
             <div class="icon icon-kefu-goods"></div>
             <p>客服</p>
         </a>
-        <a href="#" class="on"> 
+        <a href="#" class="on">
             <div class="icon icon-collect-goods"></div>
             <p>收藏</p>
         </a>
@@ -123,44 +124,45 @@
             </div>
         </div>
 
-        <form action="./payafter.html">
+        <form action="./payafter.html" id="myform">
             <div class="form-control">
-                    <div class="label">购买数量</div>
-                    <div class="value">
-                        <div class="num-control">
-                            <span id="num-control-sub-hook" class=" iconfont iconjianhaoshouqi"></span>
-                            <input id="num-control-input-hook" type="number" name="num" value="1">
-                            <span id="num-control-add-hook" class=" iconfont iconjiahaozhankai "></span>
-                        </div>
+                <div class="label">购买数量</div>
+                <div class="value">
+                    <div class="num-control">
+                        <span id="num-control-sub-hook" class=" iconfont iconjianhaoshouqi"></span>
+                        <input id="num-control-input-hook" type="number" name="num" value="1">
+                        <span id="num-control-add-hook" class=" iconfont iconjiahaozhankai "></span>
                     </div>
-                
+                </div>
+
             </div>
 
             <div class="form-control">
-              
-                    <div class="label">选择级别</div>
-                    <div class="value">
-                        <div class="checkbox-control contact" >
-                              <label>
-                                <input type="checkbox" name="level"  value="L1-L3">
-                                <span>L1-L3</span>
-                              </label>
-                              <label>
-                                <input type="checkbox" name="level"  value="L4-L6">
-                                <span >L4-L6</span>
-                            </label>
-                         </div>
+
+                <div class="label">选择级别</div>
+                <div class="value">
+                    <div class="checkbox-control contact">
+                        <label>
+                            <input type="checkbox" name="level" value="L1-L3">
+                            <span>L1-L3</span>
+                        </label>
+                        <label>
+                            <input type="checkbox" name="level" value="L4-L6">
+                            <span>L4-L6</span>
+                        </label>
                     </div>
-               
+                </div>
+
             </div>
 
             <div class="form-control">
                 <div class="label">请输入手机号</div>
-                <div class="value">
-                   <input type="text" name="phone" id=""  placeholder="请输入您的手机号码" maxlength="11" onkeyup="this.value=this.value.replace(/\D/g,'')" >
+                <div class="value" >
+                    <input type="text" name="phone" class="phone" placeholder="" maxlength="11"
+                        onkeyup="this.value=this.value.replace(/\D/g,'')">
                 </div>
-           
-        </div>
+
+            </div>
 
             <button type="submit" class="submit">下一步</button>
         </form>
@@ -171,7 +173,7 @@
     <script src="./js/swiper.min.js"></script>
     <script>
         var mySwiper = new Swiper('.swiper-container', {
-            loop : true,
+            loop: true,
             autoplay: {
                 disableOnInteraction: false,
             }, //可选选项，自动滑动
@@ -180,18 +182,47 @@
             },
         })
 
-        $(".contact input").change(function(){
-            if($(this).prop("checked")){
-                $(".contact input[value="+ this.value +"]").prop('checked',true)
-            }else{
-                $(".contact input[value="+ this.value +"]").prop('checked',false)
+        $(".contact input").change(function () {
+            if ($(this).prop("checked")) {
+                $(".contact input[value=" + this.value + "]").prop('checked', true)
+            } else {
+                $(".contact input[value=" + this.value + "]").prop('checked', false)
             }
+        })
+
+
+        $('.phone').keyup(function(){
+            validatePhone(this.value,$(this).parent())
+        })
+        function validatePhone(phone,$pEl){
+            if (!(/^1[3456789]\d{9}$/.test(phone))) {
+                if($pEl.find('.error').length ==1){
+                    $pEl.find('.error').text('请输入正确的手机号！')
+                }else{
+                    $pEl.append('<div class="error" style="position: absolute;color: red;font-size: 12px;right: 0;bottom: 1.125rem;">请输入正确的手机号！</div>')
+                }
+                return false;
+            }
+            $pEl.find('.error').text('')
+            return true
+        }
+        $('#myform').submit(function (e) {
+            var phone = $(this).find('.phone').val();
+            if(!validatePhone(phone , $(this).find('.phone').parent())){
+                e.preventDefault();
+                e.stopPropagation();
+            }
+
+
         })
     </script>
     <script src="./js/main.js"></script>
     <script>
         //  min min最小值 max最大值 超出的区间 设置的value会变成边界值
-        new NumControl("#num-control-input-hook",'#num-control-add-hook','#num-control-sub-hook',{min:2,max:100});
+        new NumControl("#num-control-input-hook", '#num-control-add-hook', '#num-control-sub-hook', {
+            min: 2,
+            max: 100
+        });
     </script>
 </body>
 

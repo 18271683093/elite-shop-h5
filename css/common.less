@@ -530,7 +530,7 @@ body {
                 justify-content: space-between;
                 box-sizing: border-box;
                 padding: 0.9375rem 1.375rem 0;
-
+                position: relative;
                 >.label {
                     height: 1.0625rem;
                     font-size: 0.875rem;
@@ -717,7 +717,7 @@ body {
         .form-control {
 
             display: flex;
-
+position: relative;
             .label {
                 font-size: 0.875rem;
                 font-family: PingFangSC-Regular, PingFang SC;
@@ -1047,7 +1047,7 @@ body {
 
             &.form-control {
                 display: flex;
-
+                position: relative;
                 .label {
                     height: 1.75rem;
                     font-size: 0.75rem;
@@ -1729,7 +1729,7 @@ body {
                 justify-content: space-between;
                 align-items: center;
                 margin-bottom: 0.625rem;
-
+                position: relative;
                 >.label {
                     height: 1.75rem;
                     font-size: 0.75rem;
@@ -1740,6 +1740,8 @@ body {
                 }
 
                 >.value {
+                    flex:1;
+                    margin-left: 0.625rem;
                     >input {
                         border: none;
                         outline: none;
