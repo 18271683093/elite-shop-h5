@@ -1,6 +1,17 @@
 //at.alicdn.com/t/font_1867616_ffdzl6loo3w.css
 @import "../font/iconfont.css";
-
+.swiper-container{
+    width: 100%;
+    height: auto;
+    .swiper-slide{
+        >img {
+            width: 100%;
+            height: auto;
+            border-radius: 0.3125rem;
+            max-width: 100%;
+        }
+    }
+}
 html,
 body {
     height: 100%;
@@ -277,18 +288,7 @@ body {
     .index {
         .banner {
             text-align: center;
-            >.swiper-container{
-                width: 100%;
-                height: auto;
-                .swiper-slide{
-                    >img {
-                        width: 22.125rem;
-                        height: 12.125rem;
-                        border-radius: 0.3125rem;
-                        max-width: 100%;
-                    }
-                }
-            }
+           
            
         }
 
@@ -486,6 +486,34 @@ body {
     .detail {
         .detailPD {
             padding: 0.8125rem 1.375rem;
+            align-content: center;
+            .label{
+                line-height:  1.75rem !important;
+                white-space: nowrap;
+            }
+            .checkbox-control {
+                >label {
+                    >span {
+                        display: inline-block;
+                        height: 1.75rem;
+                        background: rgba(216, 216, 216, 0.3);
+                        border-radius: 0.1875rem;
+                        line-height: 1.75rem;
+                        padding: 0 0.625rem;
+                        color: #434343;
+                        margin: 0 0.1875rem 0.1875rem 0;
+                    }
+
+                    >input {
+                        display: none;
+                    }
+
+                    >input:checked+span {
+                        background: rgba(255, 0, 0, 0.3);
+                        color: rgba(255, 0, 0, 1);
+                    }
+                }
+            }
         }
 
         .banner {

@@ -17,13 +17,21 @@
     <meta name="format-detection" content="date=no">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <link rel="stylesheet" href="./css/reset.min.css">
+    <link rel="stylesheet" href="./css/swiper.min.css">
     <link rel="stylesheet" href="./css/common.css">
 </head>
 
 <body>
     <div id="container" class="detail">
         <div class="banner  bg-white mb10">
-            <img src="./images/index1-banner.jpg" alt="" srcset="">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"> <img src="./images/index1-banner.jpg" alt="" srcset=""></div>
+                    <div class="swiper-slide">slider2</div>
+                    <div class="swiper-slide">slider3</div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
             <div class="num">
                 <div class="count"><span>￥9.9</span><span>￥99</span></div>
                 <div class="month-sale">月销230笔</div>
@@ -40,7 +48,26 @@
 
         <div class="form-control bg-white mb10 detailPD">
             <div class="label">级别选择</div>
-            <div class="value">L1-L3 L4-L5</div>
+            <div class="value">
+                <div class="checkbox-control contact" >
+                    <label>
+                      <input type="checkbox" name="level"  value="L1-L3">
+                      <span>L1-L3</span>
+                    </label>
+                    <label>
+                      <input type="checkbox" name="level"  value="L4-L6">
+                      <span >L4-L6</span>
+                  </label>
+                  <label>
+                    <input type="checkbox" name="level"  value="L7-L8">
+                    <span>L7-L8</span>
+                  </label>
+                  <label>
+                    <input type="checkbox" name="level"  value="L8-L9">
+                    <span >L8-L9</span>
+                </label>
+               </div>
+            </div>
         </div>
 
         <div class="bg-white mb10 detailPD  pj-block">
@@ -113,7 +140,7 @@
               
                     <div class="label">选择级别</div>
                     <div class="value">
-                        <div class="checkbox-control">
+                        <div class="checkbox-control contact" >
                               <label>
                                 <input type="checkbox" name="level"  value="L1-L3">
                                 <span>L1-L3</span>
@@ -141,6 +168,26 @@
         <div class="close iconfont iconguanbi" id="close-buy-card-hook"></div>
     </div>
     <script src="./js/jquery.min.js"></script>
+    <script src="./js/swiper.min.js"></script>
+    <script>
+        var mySwiper = new Swiper('.swiper-container', {
+            loop : true,
+            autoplay: {
+                disableOnInteraction: false,
+            }, //可选选项，自动滑动
+            pagination: {
+                el: '.swiper-pagination',
+            },
+        })
+
+        $(".contact input").change(function(){
+            if($(this).prop("checked")){
+                $(".contact input[value="+ this.value +"]").prop('checked',true)
+            }else{
+                $(".contact input[value="+ this.value +"]").prop('checked',false)
+            }
+        })
+    </script>
     <script src="./js/main.js"></script>
     <script>
         //  min min最小值 max最大值 超出的区间 设置的value会变成边界值

@@ -1,4 +1,14 @@
 @import "../font/iconfont.css";
+.swiper-container {
+  width: 100%;
+  height: auto;
+}
+.swiper-container .swiper-slide > img {
+  width: 100%;
+  height: auto;
+  border-radius: 0.3125rem;
+  max-width: 100%;
+}
 html,
 body {
   height: 100%;
@@ -226,16 +236,6 @@ body > #menu.spell-details-menu > .btn {
 body .index .banner {
   text-align: center;
 }
-body .index .banner > .swiper-container {
-  width: 100%;
-  height: auto;
-}
-body .index .banner > .swiper-container .swiper-slide > img {
-  width: 22.125rem;
-  height: 12.125rem;
-  border-radius: 0.3125rem;
-  max-width: 100%;
-}
 body .index .input-group {
   width: 22.25rem;
   height: 2.4375rem;
@@ -399,6 +399,28 @@ body .index .good-list .good-body > div > .btns > a {
 }
 body .detail .detailPD {
   padding: 0.8125rem 1.375rem;
+  align-content: center;
+}
+body .detail .detailPD .label {
+  line-height: 1.75rem !important;
+  white-space: nowrap;
+}
+body .detail .detailPD .checkbox-control > label > span {
+  display: inline-block;
+  height: 1.75rem;
+  background: rgba(216, 216, 216, 0.3);
+  border-radius: 0.1875rem;
+  line-height: 1.75rem;
+  padding: 0 0.625rem;
+  color: #434343;
+  margin: 0 0.1875rem 0.1875rem 0;
+}
+body .detail .detailPD .checkbox-control > label > input {
+  display: none;
+}
+body .detail .detailPD .checkbox-control > label > input:checked + span {
+  background: rgba(255, 0, 0, 0.3);
+  color: #ff0000;
 }
 body .detail .banner {
   padding-bottom: 0.9375rem;
