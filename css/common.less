@@ -277,13 +277,19 @@ body {
     .index {
         .banner {
             text-align: center;
-
-            >img {
-                width: 22.125rem;
-                height: 12.125rem;
-                border-radius: 0.3125rem;
-                max-width: 100%;
+            >.swiper-container{
+                width: 100%;
+                height: auto;
+                .swiper-slide{
+                    >img {
+                        width: 22.125rem;
+                        height: 12.125rem;
+                        border-radius: 0.3125rem;
+                        max-width: 100%;
+                    }
+                }
             }
+           
         }
 
         .input-group {

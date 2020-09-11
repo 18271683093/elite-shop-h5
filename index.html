@@ -15,20 +15,30 @@
     <meta name="format-detection" content="email=no">
     <meta name="format-detection" content="address=no">
     <meta name="format-detection" content="date=no">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <link rel="stylesheet" href="./css/reset.min.css">
+    <link rel="stylesheet" href="./css/swiper.min.css">
     <link rel="stylesheet" href="./css/common.css">
 </head>
 
 <body>
     <div id="container" class="index">
         <div class="banner pd10 border-box bg-white mb10">
-            <img src="./images/index1-banner.jpg" alt="" srcset="">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"> <img src="./images/index1-banner.jpg" alt="" srcset=""></div>
+                    <div class="swiper-slide">slider2</div>
+                    <div class="swiper-slide">slider3</div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+
             <div class="input-group">
                 <label for="search"><img src="./images/se.png" alt="" srcset=""></label>
-                <input name="keyword" type="text" id="search" placeholder="搜索课程" onkeyup="seach(this,'./index.html')"  >
+                <input name="keyword" type="text" id="search" placeholder="搜索课程" onkeyup="seach(this,'./index.html')">
             </div>
-            <a href="#" class="yaoqing"  style=" background-image:url(./images/a3.png)"></a>
+            <a href="#" class="yaoqing" style=" background-image:url(./images/a3.png)"></a>
         </div>
 
         <div class="good-list pd10 border-box bg-white mb10">
@@ -88,34 +98,40 @@
         </div>
     </div>
     <div id="menu">
-        <a href="./index.html" class="on"> 
+        <a href="./index.html" class="on">
             <div class="icon icon-all-goods"></div>
             <p>全部商品</p>
         </a>
-        <a href="./message.html" class="on"> 
+        <a href="./message.html" class="on">
             <div class="icon icon-message-goods"></div>
             <p>消息</p>
         </a>
-        <a href="./order.html" class="on"> 
+        <a href="./order.html" class="on">
             <div class="icon icon-car-goods"></div>
             <p>购物车</p>
         </a>
-        <a href="./personal_center.html" class="on"> 
+        <a href="./personal_center.html" class="on">
             <div class="icon icon-my-goods"></div>
             <p>我的</p>
         </a>
     </div>
-
+    <script src="./js/swiper.min.js"></script>
     <script>
+        var mySwiper = new Swiper('.swiper-container', {
+            autoplay: true, //可选选项，自动滑动
+            pagination: {
+                el: '.swiper-pagination',
+            },
+        })
 
-        function seach(input,src){
-            var e=window.event || arguments.callee.caller.arguments[0];
+        function seach(input, src) {
+            var e = window.event || arguments.callee.caller.arguments[0];
             // keycode 13 = Enter
-            if(e.keyCode === 13){
-                location.href = src +"?"+input.name+"="+input.value
+            if (e.keyCode === 13) {
+                location.href = src + "?" + input.name + "=" + input.value
             }
-            
-        }   
+
+        }
     </script>
 </body>
 

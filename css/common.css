@@ -226,7 +226,11 @@ body > #menu.spell-details-menu > .btn {
 body .index .banner {
   text-align: center;
 }
-body .index .banner > img {
+body .index .banner > .swiper-container {
+  width: 100%;
+  height: auto;
+}
+body .index .banner > .swiper-container .swiper-slide > img {
   width: 22.125rem;
   height: 12.125rem;
   border-radius: 0.3125rem;
