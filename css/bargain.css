@@ -395,7 +395,7 @@ body > #container.distribution_center > .person-msg {
   box-sizing: border-box;
   padding: 0.9375rem 2.1875rem;
 }
-body > #container.distribution_center > .person-msg > img {
+body > #container.distribution_center > .person-msg > a > img {
   width: 3.0625rem;
   height: 3.0625rem;
   border-radius: 50%;

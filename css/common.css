@@ -1125,7 +1125,7 @@ body .personal_center > .person {
   padding: 1.9375rem 0 1.0625rem;
   box-sizing: border-box;
 }
-body .personal_center > .person > img {
+body .personal_center > .person > a > img {
   width: 3.0625rem;
   height: 3.0625rem;
   border-radius: 50%;
