@@ -1006,3 +1006,7 @@ body > .shade > .btn {
 .order-list .evaluate-item > .message > p:nth-child(1) > span {
   color: #FF0000;
 }
+.shop-cart {
+  padding-bottom: 50px;
+  background: #EDF2F5 !important;
+}
