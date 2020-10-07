@@ -25,10 +25,9 @@
             <div class="checkall"> </div>
             <span>普通购买</span>
         </div>
-        <a href="./shopCartEdit.html">编辑</a>
+        <a href="javascript:void(0)" id="complate">完成</a>
     </div>
-    <div id="container">
-
+    <form id="container">
         <div class="order-item ">
             <div class="m-checkbox">
                 <label>
@@ -41,7 +40,13 @@
                 <div>
                     <p class="name">介绍啊介绍啊介绍啊介绍啊介绍啊介绍啊介绍啊介绍啊介绍啊介绍啊介绍啊介绍啊介绍啊介绍啊介绍啊介绍啊介绍啊介绍啊介绍啊</p>
                     <div class="level">L1-L3</div>
-                    <div class="new-count"><span class="span1">￥1,000</span><span class="span2">x1</span></div>
+                    <div class="new-count"><span class="span1">￥1,000</span>
+                        <div class="num-control">
+                            <span class="num-control-sub-hook iconfont iconjianhaoshouqi"></span>
+                            <input class="num-control-input-hook" type="number" name="num" value="1">
+                            <span class="num-control-add-hook iconfont iconjiahaozhankai"></span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -58,7 +63,13 @@
                 <div>
                     <p class="name">介绍啊介绍啊介绍啊介绍啊介绍啊介绍啊介绍啊介绍啊介绍啊介绍啊介绍啊介绍啊介绍啊介绍啊介绍啊介绍啊介绍啊介绍啊介绍啊</p>
                     <div class="level">L1-L3</div>
-                    <div class="new-count"><span class="span1">￥1,000</span><span class="span2">x1</span></div>
+                    <div class="new-count"><span class="span1">￥1,000</span>
+                        <div class="num-control">
+                            <span class="num-control-sub-hook iconfont iconjianhaoshouqi"></span>
+                            <input class="num-control-input-hook" type="number" name="num" value="1">
+                            <span class="num-control-add-hook iconfont iconjiahaozhankai"></span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -79,75 +90,92 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div class="bottom-tool">
-        <div><span></span><span></span></div>
-        <div id="submit-order">提交订单</div>
+    </form>
+    <div class="del-bottom-tool">
+        <div id="del-order">删除</div>
     </div>
 
-    <div id="shop-cart-pop">
-        <div class="container">
-            <div class="close iconfont iconguanbi"></div>
-            <h5>请分开结算以下商品</h5>
-            <div class="main-box">
 
-            </div>
-        </div>
-    </div>
     <script src="./js/jquery.min.js"></script>
     <script>
-        var settlementUrl = "/"
+        var delUrl = "/",
+            completeUrl = "/";
         $('.checkall').on("click", function () {
 
             if ($(this).hasClass('checked')) {
                 $('input[name="course"]').each(function () {
-                   if(!$(this).prop("disabled"))$(this).prop("checked", false);
+                    if (!$(this).prop("disabled")) $(this).prop("checked", false);
                 });
                 $(this).removeClass('checked')
             } else {
                 $('input[name="course"]').each(function () {
-                    if(!$(this).prop("disabled")) $(this).prop("checked", true);
+                    if (!$(this).prop("disabled")) $(this).prop("checked", true);
                 });
                 $(this).addClass('checked')
             }
         });
 
-        $('#submit-order').click(function () {
-            renderPop();
-            $('#shop-cart-pop').show();
-        })
-
-
-        $('#shop-cart-pop .close').click(function () {
-            $('#shop-cart-pop').hide();
-            $('#shop-cart-pop .main-box').empty();
-        })
-
-
-        function renderPop() {
-            var html = "";
+        $('#del-order').click(function () {
+            var params = [];
             $('input:checkbox[name=course]').each(function (index, checkbox) {
                 var value = checkbox.value,
-                    isChecked = $(checkbox).prop("checked"),
-                    text = $(checkbox).parent().parent().parent().find('.name').text(),
-                    count = $(checkbox).parent().parent().parent().find('.span1').text();
-                if (isChecked) html += `<div class="m-item">
-                                        <div>
-                                            <p>${text}</p>
-                                            <div>${count}</div>
-                                        </div>
-                                        <a href="${settlementUrl +'?id='+value}">去结算</a>
-                                    </div>  `
+                    isChecked = $(checkbox).prop("checked");
+                if (isChecked) params.push(value)
             })
+            window.location = delUrl + '?ids=' + params.join(',')
+        })
 
+        $('#complate').click(function(){
+            $("#container").submit()
+        })
 
-            if (html) {
-                $('#shop-cart-pop .main-box').html(html)
+        var opts = {
+            disabled: "disabled",
+            min: 1,
+            max: 10000
+        };
+      
+        $('.num-control > .num-control-sub-hook ').click(function () {
+       
+            var $input = $(this).parent().find('.num-control-input-hook'),
+                curValue = Number($input.val());
+            if (curValue > opts.min) {
+                $input.val(curValue - 1)
+            }
+            resetDisable($(this).parent())
+        })
+
+        $('.num-control > .num-control-add-hook ').click(function () {
+          
+            var $input = $(this).parent().find('.num-control-input-hook'),
+                curValue = Number($input.val());
+            if (curValue < opts.max) {
+                $input.val(curValue + 1)
+            }
+            resetDisable($(this).parent())
+        })
+
+        $('.num-control').each(function(index,el){
+            resetDisable($(el))
+        })
+
+        function resetDisable($pEl) {
+            var value = Number($pEl.find('.num-control-input-hook').val());
+            if (value < opts.min + 1) {
+                $pEl.find('.num-control-sub-hook').addClass('disabled')
             } else {
-                $('#shop-cart-pop .main-box').html('<div class="nokc">请先选择要结算的课程！</div>');
+                $pEl.find('.num-control-sub-hook').removeClass('disabled')
             }
 
+            if (value > opts.max - 1) {
+                $pEl.find('.num-control-add-hook').addClass('disabled')
+            } else {
+                $pEl.find('.num-control-add-hook').removeClass('disabled')
+            }
         }
+
+
+       
     </script>
 </body>
 
