@@ -109,7 +109,12 @@
             <div class="icon icon-collect-goods"></div>
             <p>收藏</p>
         </a>
-        <a class="btn" id="btn-buy-hook">立即购买</a>
+        <div class="btns">
+            <a id="btn-addShopCart-hook" href="javascript:void(0);"><img src="./images/jrgw.png" alt="" srcset=""></a>
+            <a id="btn-buyNow-hook" href="javascript:void(0);"><img src="./images/ljgm.png" alt="" srcset=""></a>
+        </div>
+
+        <!-- <a class="btn" id="btn-buy-hook">立即购买</a> -->
     </div>
 
 
@@ -125,6 +130,7 @@
         </div>
 
         <form action="./payafter.html" id="myform">
+            <input type="text" name="type" style="display: none;" id="fType">
             <div class="form-control">
                 <div class="label">购买数量</div>
                 <div class="value">
@@ -157,7 +163,7 @@
 
             <div class="form-control">
                 <div class="label">请输入手机号</div>
-                <div class="value" >
+                <div class="value">
                     <input type="text" name="phone" class="phone" placeholder="" maxlength="11"
                         onkeyup="this.value=this.value.replace(/\D/g,'')">
                 </div>
@@ -172,6 +178,19 @@
     <script src="./js/jquery.min.js"></script>
     <script src="./js/swiper.min.js"></script>
     <script>
+        $('#btn-addShopCart-hook').click(function () {
+            $("#fType").val(1)
+            $('#shade-hook').show();
+            $('#buy-card-hook').slideDown(300);
+        })
+
+        $('#btn-buyNow-hook').click(function () {
+            $("#fType").val(2)
+            $('#shade-hook').show();
+            $('#buy-card-hook').slideDown(300);
+        })
+
+
         var mySwiper = new Swiper('.swiper-container', {
             loop: true,
             autoplay: {
@@ -191,15 +210,18 @@
         })
 
 
-        $('.phone').keyup(function(){
-            validatePhone(this.value,$(this).parent())
+        $('.phone').keyup(function () {
+            validatePhone(this.value, $(this).parent())
         })
-        function validatePhone(phone,$pEl){
+
+        function validatePhone(phone, $pEl) {
             if (!(/^1[3456789]\d{9}$/.test(phone))) {
-                if($pEl.find('.error').length ==1){
+                if ($pEl.find('.error').length == 1) {
                     $pEl.find('.error').text('请输入正确的手机号！')
-                }else{
-                    $pEl.append('<div class="error" style="position: absolute;color: red;font-size: 12px;right: 0;bottom: 1.125rem;">请输入正确的手机号！</div>')
+                } else {
+                    $pEl.append(
+                        '<div class="error" style="position: absolute;color: red;font-size: 12px;right: 0;bottom: 1.125rem;">请输入正确的手机号！</div>'
+                        )
                 }
                 return false;
             }
@@ -208,7 +230,7 @@
         }
         $('#myform').submit(function (e) {
             var phone = $(this).find('.phone').val();
-            if(!validatePhone(phone , $(this).find('.phone').parent())){
+            if (!validatePhone(phone, $(this).find('.phone').parent())) {
                 e.preventDefault();
                 e.stopPropagation();
             }
