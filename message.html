@@ -56,7 +56,7 @@
             isDate = false;
         Mock.mock('/getlist', {
             "success": 1,
-            "data|0-10": [{
+            "data|0": [{
                 "id|+1": 1,
                 "time": function () {
                     var date = !isDate ? "5月1号" : "";
@@ -110,6 +110,8 @@
                         );
             },
             render: function render(data) {
+                if(data.length == 0) return;
+                console.log('..')
                 var _this = this;
 
                 var html = "";
